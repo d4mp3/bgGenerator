@@ -8,10 +8,30 @@ var initial = document.querySelector("h4");
 color1.value = "#FF0000"; // rgb(255,0,0)
 color2.value = "#FFFF00"; // rgb(255,255,0)
 
+function hexToRGB(h) {
+let r = 255, g = 255, b = 255;
+
+// 3 digits
+if (h.length == 4) {
+r = "0x" + h[1] + h[1];
+g = "0x" + h[2] + h[2];
+b = "0x" + h[3] + h[3];
+
+// 6 digits
+} else if (h.length == 7) {
+r = "0x" + h[1] + h[2];
+g = "0x" + h[3] + h[4];
+b = "0x" + h[5] + h[6];
+}
+
+return "rgb("+ +r + "," + +g + "," + +b + ")";
+}
+
+
 var init = "linear-gradient(to right, " 
-	+ color1.value 
+	+ hexToRGB(color1.value) 
 	+ ", " 
-	+ color2.value 
+	+ hexToRGB(color2.value) 
 	+ ")";
 
 initial.textContent = "initial style: " + init + ";";
