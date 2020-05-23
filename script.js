@@ -9,7 +9,7 @@ color1.value = "#FF0000"; // rgb(255,0,0)
 color2.value = "#FFFF00"; // rgb(255,255,0)
 
 function hexToRGB(h) {
-let r = 255, g = 255, b = 255;
+let r = 0, g = 0, b = 0;
 
 // 3 digits
 if (h.length == 4) {
